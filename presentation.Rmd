@@ -1,0 +1,156 @@
+---
+title: "Docker"
+subtitle: "For data analysis"
+author: "Sam Abbott"
+date: "2018-05-24 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: center, middle, inverse
+
+#Overview
+
+---
+
+#Overview
+
+- Why Docker
+
+- What is Docker
+
+- The basics of a Docker
+
+- Building a Dockerfile
+
+- The basics of Docker compose
+
+- Continuous integration and Docker
+
+---
+
+# Overview
+
+- Example: Rstudio Server as a development environment
+
+- Example: Jupyter Notebooks as a development environment
+
+- Example: Shiny app deployment
+
+- Aside: ShinyPrioxy
+
+- Example: Scheduling processes, with an example twitter bot.
+
+- Example: Database updating at FC, using Python
+
+- Example: Data transformation, model fitting, predictions - Offer rate tracker (dev)
+
+- Wrap up
+
+---
+
+# Why Docker
+
+- Reproducible environment, removing works on my machine issues. Move between machines and analysts with ease.
+
+- Partition tasks to their own environment, securing login credentials etc. 
+
+- More task with the same resources (as docker uses a shared operating system.
+
+- Docker containers lend themsevles to continuous integration and deployment
+
+- Test deployments in production conditions with test databases etc. in the environment they will run in.
+
+- Useful for open source projects like R where libraries are constantly being updated, potentially breaking your analysis.
+
+---
+
+class: center, middle, inverse
+
+#What is Docker
+
+---
+#[What is Docker](https://opensource.com/resources/what-docker)
+
+"Docker is a tool designed to make it easier to create, deploy, and run applications by using containers" 
+
+##[What is a container](https://www.docker.com/what-container)
+
+"A container image is a lightweight, stand-alone, executable package of a piece of software that includes everything needed to run it: code, runtime, system tools, system libraries, settings"
+---
+
+class: center, middle, inverse
+
+# The basics of Docker
+
+---
+
+#[ The Docker Engine](https://docs.docker.com/engine/docker-overview/#the-docker-platform)
+
+##Server 
+
+Long running process known as a daemon
+
+##REST API
+
+Specifies  the interface
+
+##Command line interface
+
+Uses the REST API to control the daemon.
+
+---
+
+#Common commands
+
+- What images do I have locally?
+
+```{bash, eval = FALSE}
+docker images
+```
+
+- What containers are running?
+
+```{bash, eval = FALSE}
+docker ps
+```
+
+- Get a new container
+
+```{bash, eval = FALSE}
+docker pull seabbs/fcdashboard
+```
+
+- Run a container
+
+```{bash, eval = FALSE}
+docker run -p 3838:3838 seabbs/fcdashboard
+```
+
+---
+
+#Common commands
+
+- How do I stop this container?
+
+```{bash, eval = FALSE}
+docker stop <container-id>
+```
+
+- How do I remove this container?
+
+```{bash, eval = FALSE}
+docker rm <container-id>
+```
+
+---
+
