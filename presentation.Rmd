@@ -267,6 +267,21 @@ class: center, middle, inverse
 
 #Docker compose
 
+---
+
+#Docker compose
+
+## [What is docker compose](https://docs.docker.com/compose/overview/)
+
+*"Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration"*
+
+## Why docker compose
+
+- Specify ports, environment files, volumes to mount and containers to link together.
+---
+
+#Common commands
+
 - build containers?
 
 ```{bash, eval = FALSE}
@@ -284,21 +299,6 @@ docker-compose up
 ```{bash, eval = FALSE}
 docker-compose down
 ```
----
-
-#Docker compose
-
-## [What is docker compose](https://docs.docker.com/compose/overview/)
-
-*"Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration"*
-
-## Why docker compose
-
-- Specify ports, environment files, volumes to mount and containers to link together.
----
-
-#Common commands
-
 
 ---
 ## [docker-compose.yml](https://github.com/FundingCircle/uk-data-scripts/blob/master/dwh_import/docker-compose.yml)
@@ -339,10 +339,8 @@ DWH_PW=
 ```
 
 ---
-
+class: center, middle, inverse
 # Continuous integration and Docker
-
----
 
 ---
 
@@ -377,7 +375,6 @@ DWH_PW=
 
 ---
 
-
 ## [CircleCI for Docker container deployment](https://github.com/FundingCircle/uk-data-scripts/blob/master/.circleci/config.yml)
 
 - Used by FC to build containers in the cloud
@@ -389,11 +386,11 @@ DWH_PW=
 - Can then be scheduled using the cluster
 
 ---
+class: center, middle, inverse
 
 #Issues
 
-
---- 
+---
 
 #Issues
 
@@ -403,7 +400,7 @@ DWH_PW=
 
 - This does not suport R, python etc. natively.
 
-- Advantage is ability to add secrets
+- Advantage is ability to add secrets? Although this should be possible with other images...
 
 - Adding version controlled R and rstudio server is difficult. I have implemented [R](https://github.com/FundingCircle/risk-model-dashboards/blob/offerratetracker/offerratetracker/docker-config/containers/r-alpine/Dockerfile) but this is not yet available from quay. 
 
@@ -412,6 +409,7 @@ DWH_PW=
 - Can normal users push to quay, schedule automated builds from GitHub for analysis in development?
 
 ---
+
 class: center, middle, inverse
 
 #Examples
@@ -524,4 +522,6 @@ docker run -d -p 8787:8787 seabbs/fcdashboard
 - Makes using continuous integration and testing much easier.
 
 - FC makes good use of docker for production, introducing it to analysis process might improve knowledge sharing etc.
+
+- Several issues to iron out before easy to use docker for analysis at FC.
 ---
