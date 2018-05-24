@@ -267,6 +267,23 @@ class: center, middle, inverse
 
 #Docker compose
 
+- build containers?
+
+```{bash, eval = FALSE}
+docker-compose build
+```
+
+- Launch containers
+
+```{bash, eval = FALSE}
+docker-compose up
+```
+
+- Bring down containers
+
+```{bash, eval = FALSE}
+docker-compose down
+```
 ---
 
 #Docker compose
@@ -280,6 +297,10 @@ class: center, middle, inverse
 - Specify ports, environment files, volumes to mount and containers to link together.
 ---
 
+#Common commands
+
+
+---
 ## [docker-compose.yml](https://github.com/FundingCircle/uk-data-scripts/blob/master/dwh_import/docker-compose.yml)
 
 ```{bash, eval = FALSE}
@@ -352,7 +373,7 @@ DWH_PW=
 
 - Contains all FC docker apps
 
-- Building handled by [circleci](https://www.google.com/search?q=circleci)
+- Building handled by [circleci](https://circleci.com/?utm_source=gb&utm_medium=SEM&utm_campaign=SEM-gb-200-Eng-ni&utm_content=SEM-gb-200-Eng-ni-CircleCI&gclid=EAIaIQobChMIpca5jcie2wIVS5PtCh2mxg1CEAAYASAAEgIJ2_D_BwE)
 
 ---
 
